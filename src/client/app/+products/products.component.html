@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let product of products" >
+            <img class="img-fluid" src="http://localhost:3000/{{product.image[0].imagePath}}" alt="">
+            {{product.desc}}
+            {{product.price}}
+            {{product.size}}
+        </div>
+    </div>
+</div>

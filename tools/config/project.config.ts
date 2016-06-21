@@ -14,8 +14,12 @@ export class ProjectConfig extends SeedConfig {
   constructor() {
     super();
     // this.APP_TITLE = 'Put name of your app here';
+    (<any>this.SYSTEM_CONFIG_DEV.paths)['ng2-file-upload'] = 
+        `${this.APP_BASE}node_modules/ng2-file-upload/ng2-file-upload`;
+    (<any>this.SYSTEM_CONFIG_DEV.paths)['ng2-bootstrap'] = 
+        `${this.APP_BASE}node_modules/ng2-bootstrap/ng2-bootstrap`;
     let additional_deps: InjectableDependency[] = [
-      // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
+      {src: 'bootstrap/dist/css/bootstrap.min.css', inject: true}
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
     ];
 

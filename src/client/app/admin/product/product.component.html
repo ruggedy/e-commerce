@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit(myProductForm.value)" [formGroup]="myProductForm" >
+    <div class="form-group" formGroupName="name" >
+        <label for="image">Image</label>
+        <input type="file" (change)="fileChangeEvent($event)" multiple/>
+        <label for="desc">Description</label>
+        <input type="text" formControlName="desc"  class="form-control">
+        <label for="price">Price</label>
+        <input type="number" formControlName="price"  class="form-control">
+        <label for="stock">Stock</label>
+        <input type="number" formControlName="stock"  class="form-control">
+    </div>
+    <div *ngFor="let category of categories" >
+        <label for="categories">{{category.name}} </label>
+        <input type="checkbox" ngControl = "categories" name="" value="{{category.categoryId}}" (change)="updateChecked(category, $event)" >
+    </div>
+    <button type="submit"> Submit</button>
+</form>
+
+<form (ngSubmit)="onCatSubmit(form.value)" #form="ngForm">
+    <input name="name" ngModel>
+    <button type="submit">send</button>
+</form>
