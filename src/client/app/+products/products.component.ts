@@ -23,7 +23,6 @@ export class ProductsComponent implements OnInit {
                 },
                 error => console.log(error)
             )
-
         this._categoryService.getCategory()
             .subscribe(
                 categories => {

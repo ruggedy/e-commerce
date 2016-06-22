@@ -26,6 +26,12 @@ router.get('/', function (req, res, next) {
                     error: err
                 });
             }
+            if (docs[0] === undefined) {
+                return res.status(404).json({
+                    title: 'an error occured',
+                    error: 'The document is empty'
+                })
+            }
             res.setHeader('Content-Type', docs[0].image[0].imageType);
             fs.createReadStream(docs[0].image[0].imagePath).pipe(res);
             res.status(200).json({

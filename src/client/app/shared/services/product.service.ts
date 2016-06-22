@@ -48,7 +48,7 @@ export class ProductService {
                 const data = response.json().obj;
                 let objs: any[] = [];
                 for (let i = 0; i < data.length; i++) {
-                    let product = new Product(data[i].image, data[i].desc, data[i].price, data[i].stock, data[i].category);
+                    let product = new Product(data[i].image, data[i].desc, data[i].price, data[i].stock, data[i].category, data[i]._id);
                     objs.push(product);
                 }
                 
